@@ -1,0 +1,49 @@
+{
+  "name": "richardszegh.me",
+  "private": true,
+  "version": "1.0.0",
+  "author": {
+    "name": "Richárd Szegh",
+    "email": "richard.szegh@gmail.com",
+    "url": "https://richardszegh.me"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richardszegh/richardszegh.me"
+  },
+  "bugs": {
+    "url": "https://github.com/richardszegh/richardszegh.me/issues",
+    "email": "richard.szegh@gmail.com"
+  },
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "lint-staged": {
+    "./src/**/*.{js,jsx,ts,tsx,json,md}": [
+      "prettier --write",
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run build"
+    }
+  },
+  "dependencies": {
+    "gatsby": "^2.23.10",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "2.0.5"
+  }
+}
