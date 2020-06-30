@@ -4,5 +4,9 @@ module.exports = {
     description: 'Personal website of Richárd Szegh',
     author: '@richardszegh',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+  ],
 }
