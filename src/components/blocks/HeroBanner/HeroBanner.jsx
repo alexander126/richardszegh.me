@@ -24,17 +24,30 @@ const HeroBannerContentWrapper = styled.div`
 const HeroBannerContent = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    align-items: flex-end;
+  }
 `
 
 const HeroBannerContentText = styled.div`
   max-width: 450px;
-  text-align: right;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: right;
+  }
 `
 
 const Welcome = styled.h1`
   line-height: 1.25;
   margin-bottom: 42px;
+
+  font-size: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
 `
 
 const MissionContainer = styled.div`
@@ -54,7 +67,11 @@ const MissionQuestion = styled.h4`
 
 const Mission = styled.h1`
   line-height: 1.25;
-  font-size: 3rem;
+
+  font-size: 1.5rem;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
 `
 
 const ButtonContainer = styled.div`
