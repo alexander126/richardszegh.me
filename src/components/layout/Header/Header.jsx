@@ -1,7 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { HEADER_HEIGHT } from '../../../style.config'
+import { HEADER_HEIGHT, PRIMARY_COLOR } from '../../../style.config'
 
 import Container from '../Container'
 
@@ -13,7 +14,14 @@ const HeaderContainer = styled.div`
   top: 0;
   width: 100%;
   height: ${HEADER_HEIGHT}px;
-  background-color: transparent;
+  background-color: ${props => (props.scrolled ? '#fff' : 'transparent')};
+  z-index: 9999;
+  color: ${props => (props.scrolled ? PRIMARY_COLOR : '#fff')};
+  padding-top: 24px;
+  padding-bottom: 24px;
+  box-shadow: ${props =>
+    props.scrolled ? '0px 0px 15px 0px rgba(0, 0, 0, 0.75)' : 'none'};
+  transition: 0.3s ease-in-out;
 `
 
 const HeaderContent = styled.div`
@@ -22,9 +30,9 @@ const HeaderContent = styled.div`
   justify-content: space-between;
 `
 
-export default function Header() {
+export default function Header({ scrolled }) {
   return (
-    <HeaderContainer>
+    <HeaderContainer scrolled={scrolled}>
       <Container>
         <HeaderContent>
           <span>{'LOGO'}</span>
@@ -34,4 +42,8 @@ export default function Header() {
       </Container>
     </HeaderContainer>
   )
+}
+
+Header.propTypes = {
+  scrolled: PropTypes.bool,
 }

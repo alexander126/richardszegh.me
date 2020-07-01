@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
-
-import { HEADER_HEIGHT } from '../../style.config'
 
 import Header from './Header/Header'
 import Footer from './Footer'
 
-const Content = styled.div`
-  padding-top: ${HEADER_HEIGHT}px;
-`
-
 export default function Layout({ children }) {
+  const [scrolled, setScrolled] = React.useState(false)
+
+  const updateScrolled = () => setScrolled(window.scrollY > 0)
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', updateScrolled)
+
+    return () => {
+      window.removeEventListener('scroll', updateScrolled)
+    }
+  }, [])
+
   return (
     <>
-      <Header />
+      <Header scrolled={scrolled} />
 
-      <Content>
+      <div>
         <main>{children}</main>
-      </Content>
+      </div>
 
       <Footer />
     </>
