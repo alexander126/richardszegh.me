@@ -8,7 +8,7 @@ import Header from './Header/Header'
 import Footer from './Footer'
 
 const Content = styled.div`
-  margin-top: ${HEADER_HEIGHT}px;
+  padding-top: ${HEADER_HEIGHT}px;
 `
 
 export default function Layout({ children }) {

@@ -13,6 +13,7 @@ const HeaderContainer = styled.div`
   top: 0;
   width: 100%;
   height: ${HEADER_HEIGHT}px;
+  background-color: transparent;
 `
 
 const HeaderContent = styled.div`
