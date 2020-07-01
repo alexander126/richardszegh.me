@@ -1,16 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
-import Header from './header'
+import { HEADER_HEIGHT } from '../../style.config'
+
+import Header from './Header'
+
+const Content = styled.div`
+  margin-top: ${HEADER_HEIGHT}px;
+`
 
 export default function Layout({ children }) {
   return (
     <>
       <Header />
 
-      <div>
+      <Content>
         <main>{children}</main>
-      </div>
+      </Content>
     </>
   )
 }
