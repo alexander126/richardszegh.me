@@ -1,11 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import {
-  HEADER_HEIGHT,
-  PRIMARY_COLOR,
-  SECONDARY_COLOR,
-} from '../../../style.config'
+import { HEADER_HEIGHT } from '../../../style.config'
 
 import Container from '../Container'
 
