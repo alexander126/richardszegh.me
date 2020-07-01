@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 import { HEADER_HEIGHT } from '../../style.config'
 
-import Header from './Header'
+import Header from './Header/Header'
+import Footer from './Footer'
 
 const Content = styled.div`
   margin-top: ${HEADER_HEIGHT}px;
@@ -18,6 +19,8 @@ export default function Layout({ children }) {
       <Content>
         <main>{children}</main>
       </Content>
+
+      <Footer />
     </>
   )
 }
