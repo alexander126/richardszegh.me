@@ -21,9 +21,7 @@ export default function Layout({ children }) {
     <>
       <Header scrolled={scrolled} />
 
-      <div>
-        <main>{children}</main>
-      </div>
+      <main>{children}</main>
 
       <Footer />
     </>

@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/utils/SEO'
 
 import HeroBanner from '../components/blocks/HeroBanner'
+import ServiceListing from '../components/blocks/ServiceListing'
 
 export default function Home() {
   return (
@@ -11,6 +12,8 @@ export default function Home() {
       <SEO title="Home" />
 
       <HeroBanner />
+
+      <ServiceListing background="white" padding="large" />
     </Layout>
   )
 }

@@ -41,3 +41,16 @@ export function getButtonHorizontalPadding(size) {
       return '1.35rem'
   }
 }
+
+export function getSectionPadding(size) {
+  switch (size) {
+    case 'large':
+      return '48px'
+
+    case 'small':
+      return '24px'
+
+    default:
+      return '32px'
+  }
+}
