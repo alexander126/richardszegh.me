@@ -16,12 +16,13 @@ export default function Home() {
       <HeroBanner />
 
       <ServiceListing
+        id="services"
         title="Services"
         background="white"
         padding="large"
         items={services}
         continueLabel="See how"
-        continueLink="#principles"
+        continueLink="/#principles"
       />
     </Layout>
   )

@@ -116,7 +116,7 @@ export default function HeroBanner() {
               </MissionContainer>
 
               <ButtonContainer>
-                <Button variant="primary" size="large" link href="#services">
+                <Button variant="primary" size="large" link to="/#services">
                   {'View services'}
                 </Button>
               </ButtonContainer>

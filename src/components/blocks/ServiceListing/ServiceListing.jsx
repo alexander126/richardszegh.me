@@ -33,6 +33,7 @@ const ContinueContainer = styled.div`
 `
 
 export default function ServiceListing({
+  id,
   title,
   background,
   padding,
@@ -41,7 +42,7 @@ export default function ServiceListing({
   continueLink,
 }) {
   return (
-    <ServiceListingSection background={background} padding={padding}>
+    <ServiceListingSection id={id} background={background} padding={padding}>
       <Container>
         {title && <ServiceListingTitle>{title}</ServiceListingTitle>}
 
@@ -62,7 +63,7 @@ export default function ServiceListing({
             <Button
               variant={background === 'primary' ? 'primary' : 'secondary'}
               link
-              href={continueLink}
+              to={continueLink}
             >
               {continueLabel}
             </Button>

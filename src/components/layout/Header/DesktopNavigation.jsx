@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+
 const NavBar = styled.nav`
   display: none;
 
@@ -9,7 +11,7 @@ const NavBar = styled.nav`
   }
 `
 
-const NavLink = styled.a`
+const NavLink = styled(AnchorLink)`
   font-size: 1.25rem;
   color: inherit;
   text-decoration: none;
@@ -19,13 +21,13 @@ const NavLink = styled.a`
 export default function DesktopNavigation() {
   return (
     <NavBar>
-      <NavLink href="#">{'Home'}</NavLink>
+      <NavLink to="/">{'Home'}</NavLink>
 
-      <NavLink href="#services">{'Services'}</NavLink>
+      <NavLink to="/#services">{'Services'}</NavLink>
 
-      <NavLink href="#portfolio">{'Portfolio'}</NavLink>
+      <NavLink to="/#portfolio">{'Portfolio'}</NavLink>
 
-      <NavLink href="#contact">{'Contact me'}</NavLink>
+      <NavLink to="/#contact">{'Contact me'}</NavLink>
     </NavBar>
   )
 }
