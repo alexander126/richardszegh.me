@@ -10,6 +10,8 @@ import {
   getButtonVerticalPadding,
 } from '../../style.config'
 
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
+
 const buttonBaseCss = css`
   display: inline-block;
   overflow: hidden;
@@ -66,7 +68,7 @@ const SecondaryButton = styled(ButtonBase)`
   ${secondaryButtonCss}
 `
 
-const LinkButtonBase = styled.a`
+const LinkButtonBase = styled(AnchorLink)`
   ${buttonBaseCss}
 `
 
