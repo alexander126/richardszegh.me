@@ -6,6 +6,8 @@ import SEO from '../components/utils/SEO'
 import HeroBanner from '../components/blocks/HeroBanner'
 import ServiceListing from '../components/blocks/ServiceListing'
 
+import services from '../content/services'
+
 export default function Home() {
   return (
     <Layout>
@@ -13,7 +15,7 @@ export default function Home() {
 
       <HeroBanner />
 
-      <ServiceListing background="white" padding="large" />
+      <ServiceListing background="white" padding="large" items={services} />
     </Layout>
   )
 }
