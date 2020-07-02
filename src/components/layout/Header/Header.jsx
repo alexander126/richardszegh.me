@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 
 import { HEADER_HEIGHT, PRIMARY_COLOR } from '../../../style.config'
 
@@ -32,6 +33,13 @@ const HeaderContent = styled.div`
   justify-content: space-between;
 `
 
+const LogoLink = styled(AnchorLink)`
+  margin: 0;
+  padding: 0;
+  height: 50px;
+  width: 50px;
+`
+
 export default function Header({ scrolled }) {
   const data = useStaticQuery(graphql`
     query {
@@ -57,13 +65,15 @@ export default function Header({ scrolled }) {
     <HeaderContainer scrolled={scrolled}>
       <Container>
         <HeaderContent>
-          <Img
-            fixed={
-              scrolled
-                ? data.primaryLogo.childImageSharp.fixed
-                : data.secondaryLogo.childImageSharp.fixed
-            }
-          />
+          <LogoLink to="/">
+            <Img
+              fixed={
+                scrolled
+                  ? data.primaryLogo.childImageSharp.fixed
+                  : data.secondaryLogo.childImageSharp.fixed
+              }
+            />
+          </LogoLink>
 
           <DesktopNavigation />
         </HeaderContent>
