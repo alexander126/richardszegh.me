@@ -29,7 +29,7 @@ const ServiceListingTitle = styled.h2`
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 48px;
 `
 
 export default function ServiceListing({

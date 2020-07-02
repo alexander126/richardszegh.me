@@ -7,6 +7,7 @@ import HeroBanner from '../components/blocks/HeroBanner'
 import ServiceListing from '../components/blocks/ServiceListing'
 
 import services from '../content/services'
+import principles from '../content/principles'
 
 export default function Home() {
   return (
@@ -23,6 +24,16 @@ export default function Home() {
         items={services}
         continueLabel="See how"
         continueLink="/#principles"
+      />
+
+      <ServiceListing
+        id="principles"
+        title="My principles"
+        background="primary"
+        padding="large"
+        items={principles}
+        continueLabel="See it in action"
+        continueLink="/#portfolio"
       />
     </Layout>
   )
