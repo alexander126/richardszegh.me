@@ -20,6 +20,12 @@ module.exports = {
         path: path.join(__dirname, 'src', 'assets', 'images'),
       },
     },
+    {
+      resolve: 'gatsby-plugin-anchor-links',
+      options: {
+        offset: -75,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
