@@ -15,7 +15,14 @@ export default function Home() {
 
       <HeroBanner />
 
-      <ServiceListing background="white" padding="large" items={services} />
+      <ServiceListing
+        title="Services"
+        background="white"
+        padding="large"
+        items={services}
+        continueLabel="See how"
+        continueLink="#principles"
+      />
     </Layout>
   )
 }

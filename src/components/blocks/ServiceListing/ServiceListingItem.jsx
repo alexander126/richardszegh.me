@@ -1,31 +1,82 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { IconContext } from 'react-icons'
 
-import { PRIMARY_COLOR } from '../../../style.config'
+import { Grid } from '@material-ui/core'
+
+const Content = styled.div`
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`
+
+const Icon = styled.div`
+  margin-bottom: 1rem;
+`
+
+const Title = styled.h2`
+  margin-bottom: 0;
+`
+
+const Header = styled.div`
+  margin-bottom: 2rem;
+
+  @media (min-width: 960px) {
+    margin-bottom: 0;
+    height: 175px;
+  }
+
+  @media (min-width: 992px) {
+    height: 150px;
+  }
+`
+
+const DescriptionContainer = styled.div`
+  flex-grow: 1;
+`
+
+const Description = styled.p`
+  margin-bottom: 0;
+`
+
+const DescriptionList = styled.ul`
+  text-align: left;
+`
+
+const DescriptionListItem = styled.li``
 
 export default function ServiceListingItem({ icon, title, description }) {
   return (
-    <div>
-      <IconContext.Provider
-        value={{
-          color: PRIMARY_COLOR,
-          size: '4rem',
-        }}
-      >
-        {icon}
-      </IconContext.Provider>
+    <Grid item xs={12} md={4}>
+      <Content>
+        <Header>
+          <IconContext.Provider
+            value={{
+              color: 'inherit',
+              size: '4rem',
+            }}
+          >
+            <Icon>{icon}</Icon>
+          </IconContext.Provider>
 
-      <h4
-        style={{
-          fontSize: '2rem',
-        }}
-      >
-        {title}
-      </h4>
+          <Title>{title}</Title>
+        </Header>
 
-      <p>{description}</p>
-    </div>
+        <DescriptionContainer>
+          {Array.isArray(description) ? (
+            <DescriptionList>
+              {description.map((item, index) => (
+                <DescriptionListItem key={index}>{item}</DescriptionListItem>
+              ))}
+            </DescriptionList>
+          ) : (
+            <Description>{description}</Description>
+          )}
+        </DescriptionContainer>
+      </Content>
+    </Grid>
   )
 }
 
