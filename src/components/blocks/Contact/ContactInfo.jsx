@@ -77,8 +77,8 @@ const Avatar = styled(Img)`
   border-radius: 50%;
   padding: 0;
   margin: 0;
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 125px;
 `
 
 export default function ContactInfo() {
@@ -86,7 +86,7 @@ export default function ContactInfo() {
     query {
       file(relativePath: { eq: "me.jpeg" }) {
         childImageSharp {
-          fixed(height: 100, width: 100) {
+          fixed(height: 125, width: 125) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -97,13 +97,13 @@ export default function ContactInfo() {
   return (
     <ContactInfoContainer>
       <Grid container spacing={4}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={6} md={12} lg={4}>
           <AvatarContainer>
             <Avatar fixed={data.file.childImageSharp.fixed} />
           </AvatarContainer>
         </Grid>
 
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={6} md={12} lg={8}>
           <ContactInfoItem>
             <ContactInfoItemTitle>Email</ContactInfoItemTitle>
 
