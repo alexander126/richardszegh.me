@@ -126,8 +126,8 @@ export default function ContactForm() {
             required
             aria-required
             type="email"
-            name="name"
-            id="name"
+            name="email"
+            id="email"
             placeholder="Your email..."
             value={email}
             onChange={handleEmailChange}
