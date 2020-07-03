@@ -5,6 +5,7 @@ import SEO from '../components/utils/SEO'
 
 import HeroBanner from '../components/blocks/HeroBanner'
 import ServiceListing from '../components/blocks/ServiceListing'
+import Contact from '../components/blocks/Contact'
 
 import services from '../content/services'
 import principles from '../content/principles'
@@ -34,6 +35,12 @@ export default function Home() {
         items={principles}
         continueLabel="See it in action"
         continueLink="/#portfolio"
+      />
+
+      <Contact
+        id="contact"
+        title="Interested? Do not hesitate. Contact me today:"
+        padding="large"
       />
     </Layout>
   )
