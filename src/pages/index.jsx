@@ -39,7 +39,7 @@ export default function Home() {
 
       <Contact
         id="contact"
-        title="Interested? Do not hesitate. Contact me today:"
+        title="Interested? Stop hesitating. Contact me today:"
         padding="large"
       />
     </Layout>
