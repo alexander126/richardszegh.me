@@ -3,8 +3,16 @@ import { DiReact, DiWordpress, DiNodejs } from 'react-icons/di'
 
 export default [
   {
-    preview: 'fessh/fessh_01.png',
-    slideshow: 'fessh',
+    preview: 'fessh_preview.png',
+    slideshow: [
+      'fessh_01.png',
+      'fessh_02.png',
+      'fessh_03.png',
+      'fessh_04.png',
+      'fessh_05.png',
+      'fessh_06.png',
+      'fessh_07.png',
+    ],
     title: 'FESSH Admin & Backend',
     typeIcon: [<DiReact />, <DiNodejs />],
     description: [
@@ -13,7 +21,7 @@ export default [
     ],
   },
   {
-    preview: 'foodsdrive/foodsdrive_01.png',
+    preview: 'foodsdrive_preview.png',
     slideshow: null,
     title: 'FoodsDrive',
     typeIcon: <DiWordpress />,
@@ -21,8 +29,8 @@ export default [
     link: 'https://foodsdrive.hu',
   },
   {
-    preview: 'foodsdrive_admin/fda_01.png',
-    slideshow: 'foodsdrive_admin',
+    preview: 'fda_preview.png',
+    slideshow: ['fda_01.png', 'fda_02.png', 'fda_03.png', 'fda_04.png'],
     title: 'FoodsDrive Admin',
     typeIcon: <DiReact />,
     description: `FoodsDrive Admin is a React.js application that serves as a custom CMS & dashboard UI for the FoodsDrive mobile application.`,
