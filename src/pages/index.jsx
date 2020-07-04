@@ -51,6 +51,7 @@ export default function Home() {
       <Contact
         id="contact"
         title="Interested? Stop hesitating. Contact me today:"
+        background="primary"
         padding="large"
       />
     </Layout>

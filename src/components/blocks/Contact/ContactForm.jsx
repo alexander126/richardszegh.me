@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled, { css } from 'styled-components'
 
 import { PRIMARY_COLOR } from '../../../style.config'
@@ -52,7 +53,7 @@ const encodeFormData = object => {
     .join('&')
 }
 
-export default function ContactForm() {
+export default function ContactForm({ background }) {
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
   const [message, setMessage] = React.useState('')
@@ -149,11 +150,23 @@ export default function ContactForm() {
         </InputBlock>
 
         <Submit>
-          <Button variant="secondary" size="large" type="submit">
+          <Button
+            variant={background === 'primary' ? 'primary' : 'secondary'}
+            size="large"
+            type="submit"
+          >
             Get in touch now!
           </Button>
         </Submit>
       </form>
     </ContactFormContainer>
   )
+}
+
+ContactForm.defaultProps = {
+  background: 'white',
+}
+
+ContactForm.propTypes = {
+  background: PropTypes.oneOf(['primary', 'white']),
 }

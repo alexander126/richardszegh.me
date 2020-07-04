@@ -34,7 +34,7 @@ export default function Contact({ id, title, background, padding }) {
 
         <Grid container spacing={6}>
           <Grid item xs={12} md={6}>
-            <ContactForm />
+            <ContactForm background={background} />
           </Grid>
 
           <Grid item xs={12} md={6}>
