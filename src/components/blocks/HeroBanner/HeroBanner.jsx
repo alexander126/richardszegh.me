@@ -104,7 +104,7 @@ export default function HeroBanner() {
               <Welcome>
                 Hey, my name is Richárd,
                 <br />
-                I'm a developer consultant.
+                I'm a software developer.
               </Welcome>
 
               <MissionContainer>
