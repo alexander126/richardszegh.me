@@ -87,9 +87,8 @@ export default function ContactForm() {
       })
       .catch(error => {
         alert(
-          'Oops, it looks like something is broken, please contact me directly via email (richard.szegh@gmail.com)!'
+          'Oops, it looks like something is broken, apologies, please contact me directly via email instead (richard.szegh@gmail.com)!'
         )
-        Sentry.captureException(error)
       })
 
     resetForm()
