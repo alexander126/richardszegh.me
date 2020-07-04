@@ -12,6 +12,7 @@ const FooterContainer = styled.footer`
   padding-top: 24px;
   padding-bottom: 24px;
   border-top: 1px solid #fff;
+  text-align: center;
 `
 
 export default function Footer() {
