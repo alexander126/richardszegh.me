@@ -5,6 +5,7 @@ import SEO from '../components/utils/SEO'
 
 import HeroBanner from '../components/blocks/HeroBanner'
 import ServiceListing from '../components/blocks/ServiceListing'
+import ProjectListing from '../components/blocks/ProjectListing'
 import Contact from '../components/blocks/Contact'
 
 import services from '../content/services'
@@ -35,6 +36,16 @@ export default function Home() {
         items={principles}
         continueLabel="See it in action"
         continueLink="/#portfolio"
+      />
+
+      <ProjectListing
+        id="portfolio"
+        title="Projects I've worked on:"
+        background="white"
+        padding="large"
+        items={[]}
+        continueLabel="I'm interested"
+        continueLink="/#contact"
       />
 
       <Contact
