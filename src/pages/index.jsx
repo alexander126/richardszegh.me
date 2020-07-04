@@ -10,6 +10,7 @@ import Contact from '../components/blocks/Contact'
 
 import services from '../content/services'
 import principles from '../content/principles'
+import projects from '../content/projects'
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
         title="Projects I've worked on:"
         background="white"
         padding="large"
-        items={[]}
+        items={projects}
         continueLabel="I'm interested"
         continueLink="/#contact"
       />

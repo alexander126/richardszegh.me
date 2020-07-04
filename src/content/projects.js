@@ -1,5 +1,5 @@
 import React from 'react'
-import { DiReact, DiWordPress, DiNodejs } from 'react-icons/di'
+import { DiReact, DiWordpress, DiNodejs } from 'react-icons/di'
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
     preview: 'foodsdrive/foodsdrive_01.png',
     slideshow: null,
     title: 'FoodsDrive',
-    typeIcon: <DiWordPress />,
+    typeIcon: <DiWordpress />,
     description: `foodsdrive.hu is a WordPress-based website I've built for a Hungarian startup company which aims to ease the life of people who'd like to eat out comfortably and without any hassle.`,
     link: 'https://foodsdrive.hu',
   },

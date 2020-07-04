@@ -4,11 +4,10 @@ import styled from 'styled-components'
 
 import { PRIMARY_COLOR, getSectionPadding } from '../../../style.config'
 
-import { Grid } from '@material-ui/core'
-
 import Container from '../../layout/Container'
-
 import Button from '../../UI/Button'
+
+import ProjectListingItem from './ProjectListingItem'
 
 const ProjectListingSection = styled.section`
   background-color: ${props =>
@@ -24,6 +23,8 @@ const ProjectListingTitle = styled.h2`
   margin-bottom: 4rem;
   text-align: center;
 `
+
+const ProjectsContainer = styled.div``
 
 const ContinueContainer = styled.div`
   display: flex;
@@ -45,15 +46,12 @@ export default function ProjectListing({
       <Container>
         {title && <ProjectListingTitle>{title}</ProjectListingTitle>}
 
-        <Grid container spacing={6} justify="center">
+        <ProjectsContainer>
           {Array.isArray(items) &&
             items.map((item, index) => (
-              <div key={index}>
-                {/* TODO: project item */}
-                {JSON.stringify(item)}
-              </div>
+              <ProjectListingItem key={index} item={item} />
             ))}
-        </Grid>
+        </ProjectsContainer>
 
         {continueLabel && continueLink && (
           <ContinueContainer>
