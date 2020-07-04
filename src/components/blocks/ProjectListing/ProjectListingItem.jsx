@@ -35,6 +35,11 @@ const ProjectInfoHeading = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
+  justify-content: center;
+
+  @media (min-width: 960px) {
+    justify-content: flex-start;
+  }
 `
 
 const ProjectInfoTitle = styled.h2`
