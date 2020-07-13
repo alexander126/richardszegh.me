@@ -18,7 +18,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   height: ${HEADER_HEIGHT}px;
   background-color: ${props => (props.scrolled ? '#fff' : 'transparent')};
-  z-index: 9999;
+  z-index: 999;
   color: ${props => (props.scrolled ? PRIMARY_COLOR : '#fff')};
   box-shadow: ${props =>
     props.scrolled ? '0px 0px 15px 0px rgba(0, 0, 0, 0.75)' : 'none'};
