@@ -10,7 +10,9 @@ import { PRIMARY_COLOR } from '../../../style.config'
 import { Grid } from '@material-ui/core'
 import RightIcon from '@material-ui/icons/ChevronRight'
 
+import Button from '../../UI/Button'
 import LinkButton from '../../UI/LinkButton'
+import ImageLightbox from '../../UI/ImageLightbox'
 
 const ProjectContainer = styled.div`
   &:not(:first-child) {
@@ -81,6 +83,10 @@ const ButtonContent = styled.span`
 `
 
 export default function ProjectListingItem({ item }) {
+  const [isImageLightboxOpen, setIsImageLightboxOpen] = React.useState(false)
+  const handleImageLightboxOpen = () => setIsImageLightboxOpen(true)
+  const handleImageLightboxClose = () => setIsImageLightboxOpen(false)
+
   const data = useStaticQuery(graphql`
     query {
       allFile {
@@ -93,30 +99,85 @@ export default function ProjectListingItem({ item }) {
           }
         }
       }
+
+      fessh: allFile(filter: { relativeDirectory: { eq: "fessh" } }) {
+        nodes {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+      }
+
+      foodsdrive_admin: allFile(
+        filter: { relativeDirectory: { eq: "foodsdrive_admin" } }
+      ) {
+        nodes {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+      }
     }
   `)
 
-  const previewNode =
-    data && data.allFile && Array.isArray(data.allFile.nodes)
-      ? data.allFile.nodes.find(node => {
-          if (
-            node.childImageSharp &&
-            node.childImageSharp.fixed &&
-            node.childImageSharp.fixed.originalName === item.preview
-          ) {
-            return true
-          } else {
-            return false
-          }
-        })
-      : null
+  const previewNode = React.useMemo(() => {
+    if (data && data.allFile && Array.isArray(data.allFile.nodes)) {
+      return data.allFile.nodes.find(node => {
+        if (
+          node.childImageSharp &&
+          node.childImageSharp.fixed &&
+          node.childImageSharp.fixed.originalName === item.preview
+        ) {
+          return true
+        } else {
+          return false
+        }
+      })
+    } else {
+      return null
+    }
+  }, [data, item])
 
-  const previewImg =
-    previewNode &&
-    previewNode.childImageSharp &&
-    previewNode.childImageSharp.fixed
-      ? previewNode.childImageSharp.fixed
-      : null
+  const previewImg = React.useMemo(() => {
+    if (
+      previewNode &&
+      previewNode.childImageSharp &&
+      previewNode.childImageSharp.fixed
+    ) {
+      return previewNode.childImageSharp.fixed
+    } else {
+      return null
+    }
+  }, [previewNode])
+
+  const slideshowImages = React.useMemo(() => {
+    const { slideshowFolder } = item
+    if (!slideshowFolder) return
+
+    if (
+      data &&
+      data[slideshowFolder] &&
+      Array.isArray(data[slideshowFolder].nodes)
+    ) {
+      return data[slideshowFolder].nodes.map(node => {
+        if (
+          node.childImageSharp &&
+          node.childImageSharp.original &&
+          node.childImageSharp.original.src
+        ) {
+          return node.childImageSharp.original.src
+        } else {
+          return null
+        }
+      })
+    } else {
+      return []
+    }
+  }, [data, item])
 
   return (
     <ProjectContainer>
@@ -163,7 +224,7 @@ export default function ProjectListingItem({ item }) {
             )}
 
             <ProjectInfoViewMore>
-              {item.link && (
+              {item.link ? (
                 <LinkButton
                   variant="secondary"
                   size="small"
@@ -181,11 +242,37 @@ export default function ProjectListingItem({ item }) {
                     />
                   </ButtonContent>
                 </LinkButton>
+              ) : (
+                item.slideshow && (
+                  <Button
+                    variant="secondary"
+                    size="small"
+                    onClick={handleImageLightboxOpen}
+                  >
+                    <ButtonContent>
+                      {'View'}
+
+                      <RightIcon
+                        style={{
+                          marginLeft: '0.35rem',
+                        }}
+                      />
+                    </ButtonContent>
+                  </Button>
+                )
               )}
             </ProjectInfoViewMore>
           </ProjectInfo>
         </Grid>
       </Grid>
+
+      {Array.isArray(slideshowImages) && (
+        <ImageLightbox
+          open={isImageLightboxOpen}
+          onClose={handleImageLightboxClose}
+          images={slideshowImages}
+        />
+      )}
     </ProjectContainer>
   )
 }
