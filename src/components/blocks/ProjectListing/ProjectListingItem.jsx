@@ -25,8 +25,25 @@ const ProjectPreviewContainer = styled.div`
   justify-content: center;
 `
 
-const ProjectPreview = styled(Img)`
+const ProjectPreview = styled.div`
   border: 2px solid ${PRIMARY_COLOR};
+  position: relative;
+`
+
+const ProjectPreviewOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: ${PRIMARY_COLOR};
+  opacity: 0;
+  transition: 0.4s;
+
+  &:hover {
+    opacity: 0.25;
+  }
 `
 
 const ProjectInfo = styled.div`
@@ -185,7 +202,21 @@ export default function ProjectListingItem({ item }) {
         <Grid item xs={12} md={6} lg={5} xl={4}>
           {previewImg && (
             <ProjectPreviewContainer>
-              <ProjectPreview fixed={previewImg} />
+              <ProjectPreview>
+                <Img fixed={previewImg} />
+
+                {(item.link || item.slideshow) && (
+                  <ProjectPreviewOverlay
+                    onClick={() => {
+                      if (item.link) {
+                        window.open(item.link, '_blank', 'noopener')
+                      } else {
+                        handleImageLightboxOpen()
+                      }
+                    }}
+                  />
+                )}
+              </ProjectPreview>
             </ProjectPreviewContainer>
           )}
         </Grid>
