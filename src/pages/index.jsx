@@ -21,7 +21,7 @@ export default function Home() {
 
       <ServiceListing
         id="services"
-        title="Services"
+        title="What do I do?"
         background="white"
         padding="large"
         items={services}
@@ -31,7 +31,7 @@ export default function Home() {
 
       <ServiceListing
         id="principles"
-        title="My principles"
+        title="How do I do it?"
         background="primary"
         padding="large"
         items={principles}
@@ -41,7 +41,7 @@ export default function Home() {
 
       <ProjectListing
         id="portfolio"
-        title="Projects I've worked on:"
+        title="Recent projects I've worked on:"
         background="white"
         padding="large"
         items={projects}
