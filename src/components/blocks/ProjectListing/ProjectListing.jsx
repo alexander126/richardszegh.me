@@ -29,7 +29,7 @@ const ProjectsContainer = styled.div``
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 72px;
 `
 
 export default function ProjectListing({
@@ -59,6 +59,7 @@ export default function ProjectListing({
               variant={background === 'primary' ? 'primary' : 'secondary'}
               link
               to={continueLink}
+              size="large"
             >
               {continueLabel}
             </Button>

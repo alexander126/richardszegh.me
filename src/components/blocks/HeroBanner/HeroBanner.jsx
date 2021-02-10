@@ -104,7 +104,7 @@ export default function HeroBanner() {
               <Welcome>
                 Hey, my name is Richárd,
                 <br />
-                I'm a software developer.
+                I'm a software engineer.
               </Welcome>
 
               <MissionContainer>
@@ -117,7 +117,7 @@ export default function HeroBanner() {
 
               <ButtonContainer>
                 <Button variant="primary" size="large" link to="/#services">
-                  {'View services'}
+                  {'Go to services'}
                 </Button>
               </ButtonContainer>
             </HeroBannerContentText>

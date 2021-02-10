@@ -150,17 +150,16 @@ export default function ContactInfo() {
 
           <AboutMe>
             <Paragraph>
-              My name is Richárd Szegh, I am a Fullstack Developer from Europe.
+              My name is Richárd Szegh, I am a Software Engineer from Europe.
             </Paragraph>
 
             <Paragraph>
-              I studied Software Information Technology at University of
-              Pannonia in Hungary and have been creating professional products
-              since 2018.
+              I studied Computer Science at University of Pannonia in Hungary
+              and have been creating software solutions since 2018.
             </Paragraph>
 
             <Paragraph>
-              I love traveling, cultures and street workout, but my main passion
+              I love travelling, cultures and calisthenics, but my main passion
               has always been technology, I have been deeply interested in the
               topic since a very young age.
             </Paragraph>

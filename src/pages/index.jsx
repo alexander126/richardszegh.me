@@ -21,37 +21,37 @@ export default function Home() {
 
       <ServiceListing
         id="services"
-        title="What do I do?"
+        title="Services that I offer"
         background="white"
         padding="large"
         items={services}
-        continueLabel="See how"
+        continueLabel="I'm interested!"
         continueLink="/#principles"
       />
 
       <ServiceListing
         id="principles"
-        title="How do I do it?"
+        title="My core values for building apps"
         background="primary"
         padding="large"
         items={principles}
-        continueLabel="See it in action"
+        continueLabel="See them in action"
         continueLink="/#portfolio"
       />
 
       <ProjectListing
         id="portfolio"
-        title="Recent projects I've worked on:"
+        title="Some of my recent projects"
         background="white"
         padding="large"
         items={projects}
-        continueLabel="I'm interested"
+        continueLabel="I want you to work on my project!"
         continueLink="/#contact"
       />
 
       <Contact
         id="contact"
-        title="Interested? Stop hesitating. Contact me today:"
+        title="Get your project built today. Contact me now:"
         background="primary"
         padding="large"
       />
