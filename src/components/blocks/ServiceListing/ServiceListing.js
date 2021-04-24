@@ -4,12 +4,14 @@ import styled from 'styled-components';
 
 import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config';
 
+import {Grid} from '@material-ui/core';
+
 import Container from '../../layout/Container';
 import Button from '../../UI/Button';
 
-import ProjectListingItem from './ProjectListingItem';
+import ServiceListingItem from './ServiceListingItem';
 
-const ProjectListingSection = styled.section`
+const ServiceListingSection = styled.section`
   background-color: ${props =>
     props.background === 'primary' ? PRIMARY_COLOR : '#fff'};
   color: ${props => (props.background === 'primary' ? '#fff' : PRIMARY_COLOR)};
@@ -18,21 +20,19 @@ const ProjectListingSection = styled.section`
   overflow: hidden;
 `;
 
-const ProjectListingTitle = styled.h2`
+const ServiceListingTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 4rem;
   text-align: center;
 `;
 
-const ProjectsContainer = styled.div``;
-
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 72px;
+  margin-top: 48px;
 `;
 
-export default function ProjectListing({
+function ServiceListing({
   id,
   title,
   background,
@@ -42,16 +42,21 @@ export default function ProjectListing({
   continueLink,
 }) {
   return (
-    <ProjectListingSection id={id} background={background} padding={padding}>
+    <ServiceListingSection id={id} background={background} padding={padding}>
       <Container>
-        {title && <ProjectListingTitle>{title}</ProjectListingTitle>}
+        {title && <ServiceListingTitle>{title}</ServiceListingTitle>}
 
-        <ProjectsContainer>
+        <Grid container spacing={6} justify="center">
           {Array.isArray(items) &&
             items.map((item, index) => (
-              <ProjectListingItem key={index} item={item} />
+              <ServiceListingItem
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
             ))}
-        </ProjectsContainer>
+        </Grid>
 
         {continueLabel && continueLink && (
           <ContinueContainer>
@@ -59,23 +64,17 @@ export default function ProjectListing({
               variant={background === 'primary' ? 'primary' : 'secondary'}
               link
               to={continueLink}
-              size="large"
             >
               {continueLabel}
             </Button>
           </ContinueContainer>
         )}
       </Container>
-    </ProjectListingSection>
+    </ServiceListingSection>
   );
 }
 
-ProjectListing.defaultProps = {
-  background: 'white',
-  padding: 'default',
-};
-
-ProjectListing.propTypes = {
+ServiceListing.propTypes = {
   title: PropTypes.string,
   background: PropTypes.oneOf(['primary', 'white']),
   padding: PropTypes.oneOf(['large', 'default', 'small']),
@@ -83,3 +82,10 @@ ProjectListing.propTypes = {
   continueLabel: PropTypes.string,
   continueLink: PropTypes.string,
 };
+
+ServiceListing.defaultProps = {
+  background: 'white',
+  padding: 'default',
+};
+
+export default ServiceListing;

@@ -18,7 +18,7 @@ const NavLink = styled(AnchorLink)`
   margin-left: 25px;
 `;
 
-export default function DesktopNavigation() {
+function DesktopNavigation() {
   return (
     <NavBar>
       <NavLink to="/">{'Home'}</NavLink>
@@ -31,3 +31,5 @@ export default function DesktopNavigation() {
     </NavBar>
   );
 }
+
+export default DesktopNavigation;

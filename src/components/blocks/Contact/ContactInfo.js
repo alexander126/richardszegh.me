@@ -81,7 +81,7 @@ const Avatar = styled(Img)`
   width: 125px;
 `;
 
-export default function ContactInfo() {
+function ContactInfo() {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "me.jpeg"}) {
@@ -176,3 +176,5 @@ export default function ContactInfo() {
     </ContactInfoContainer>
   );
 }
+
+export default ContactInfo;

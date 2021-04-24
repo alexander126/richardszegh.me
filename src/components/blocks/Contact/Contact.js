@@ -26,7 +26,7 @@ const ContactTitle = styled.h2`
   text-align: center;
 `;
 
-export default function Contact({id, title, background, padding}) {
+function Contact({id, title, background, padding}) {
   return (
     <ContactSection id={id} background={background} padding={padding}>
       <Container>
@@ -46,13 +46,15 @@ export default function Contact({id, title, background, padding}) {
   );
 }
 
-Contact.defaultProps = {
-  background: 'white',
-  padding: 'default',
-};
-
 Contact.propTypes = {
   title: PropTypes.string,
   background: PropTypes.oneOf(['primary', 'white']),
   padding: PropTypes.oneOf(['large', 'default', 'small']),
 };
+
+Contact.defaultProps = {
+  background: 'white',
+  padding: 'default',
+};
+
+export default Contact;

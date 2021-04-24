@@ -15,7 +15,7 @@ const FooterContainer = styled.footer`
   text-align: center;
 `;
 
-export default function Footer() {
+function Footer() {
   return (
     <FooterContainer>
       <small>
@@ -28,3 +28,5 @@ export default function Footer() {
     </FooterContainer>
   );
 }
+
+export default Footer;

@@ -53,7 +53,7 @@ const encodeFormData = object => {
     .join('&');
 };
 
-export default function ContactForm({background}) {
+function ContactForm({background}) {
   const [name, setName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [message, setMessage] = React.useState('');
@@ -163,10 +163,12 @@ export default function ContactForm({background}) {
   );
 }
 
+ContactForm.propTypes = {
+  background: PropTypes.oneOf(['primary', 'white']),
+};
+
 ContactForm.defaultProps = {
   background: 'white',
 };
 
-ContactForm.propTypes = {
-  background: PropTypes.oneOf(['primary', 'white']),
-};
+export default ContactForm;

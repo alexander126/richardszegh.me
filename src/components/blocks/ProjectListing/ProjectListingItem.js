@@ -99,7 +99,7 @@ const ButtonContent = styled.span`
   line-height: 1rem;
 `;
 
-export default function ProjectListingItem({item}) {
+function ProjectListingItem({item}) {
   const [isImageLightboxOpen, setIsImageLightboxOpen] = React.useState(false);
   const handleImageLightboxOpen = () => setIsImageLightboxOpen(true);
   const handleImageLightboxClose = () => setIsImageLightboxOpen(false);
@@ -311,3 +311,5 @@ export default function ProjectListingItem({item}) {
 ProjectListingItem.propTypes = {
   item: PropTypes.object.isRequired,
 };
+
+export default ProjectListingItem;

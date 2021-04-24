@@ -78,7 +78,7 @@ const ButtonContainer = styled.div`
   text-align: center;
 `;
 
-export default function HeroBanner() {
+function HeroBanner() {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: {eq: "abstract_space.png"}) {
@@ -127,3 +127,5 @@ export default function HeroBanner() {
     </HeroBannerBackground>
   );
 }
+
+export default HeroBanner;

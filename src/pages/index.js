@@ -12,7 +12,7 @@ import services from '../content/services';
 import principles from '../content/principles';
 import projects from '../content/projects';
 
-export default function Home() {
+function Home() {
   return (
     <Layout>
       <Seo title="Home" />
@@ -58,3 +58,5 @@ export default function Home() {
     </Layout>
   );
 }
+
+export default Home;

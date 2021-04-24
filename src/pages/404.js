@@ -4,7 +4,7 @@ import {navigate} from 'gatsby';
 import Layout from '../components/layout';
 import Seo from '../components/utils/Seo';
 
-export default function NotFound() {
+function NotFound() {
   React.useEffect(() => {
     navigate('/');
   }, []);
@@ -15,3 +15,5 @@ export default function NotFound() {
     </Layout>
   );
 }
+
+export default NotFound;

@@ -66,7 +66,7 @@ const SecondaryButton = styled(ButtonBase)`
   ${secondaryButtonCss}
 `;
 
-export default function Button({children, variant, link, ...rest}) {
+function LinkButton({children, variant, link, ...rest}) {
   if (variant === 'primary') {
     return <PrimaryButton {...rest}>{children}</PrimaryButton>;
   } else if (variant === 'secondary') {
@@ -76,12 +76,14 @@ export default function Button({children, variant, link, ...rest}) {
   }
 }
 
-Button.defaultProps = {
-  size: 'default',
-};
-
-Button.propTypes = {
+LinkButton.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(['primary', 'secondary']),
   size: PropTypes.oneOf(['large', 'default', 'small']),
 };
+
+LinkButton.defaultProps = {
+  size: 'default',
+};
+
+export default LinkButton;

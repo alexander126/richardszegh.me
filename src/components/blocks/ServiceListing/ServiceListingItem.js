@@ -47,7 +47,7 @@ const DescriptionList = styled.ul`
 
 const DescriptionListItem = styled.li``;
 
-export default function ServiceListingItem({icon, title, description}) {
+function ServiceListingItem({icon, title, description}) {
   return (
     <Grid item xs={12} md={4}>
       <Content>
@@ -88,3 +88,5 @@ ServiceListingItem.propTypes = {
     PropTypes.arrayOf(PropTypes.string).isRequired,
   ]),
 };
+
+export default ServiceListingItem;

@@ -40,7 +40,7 @@ const LogoLink = styled(AnchorLink)`
   width: 50px;
 `;
 
-export default function Header({scrolled}) {
+function Header({scrolled}) {
   const data = useStaticQuery(graphql`
     query {
       primaryLogo: file(relativePath: {eq: "logo_primary.png"}) {
@@ -85,3 +85,5 @@ export default function Header({scrolled}) {
 Header.propTypes = {
   scrolled: PropTypes.bool,
 };
+
+export default Header;

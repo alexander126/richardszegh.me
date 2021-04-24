@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 
-export default function ImageLightbox({open, onClose, images}) {
+function ImageLightbox({open, onClose, images}) {
   const [photoIndex, setPhotoIndex] = React.useState(0);
 
   const handlePrev = () => {
@@ -34,3 +34,5 @@ ImageLightbox.propTypes = {
   onClose: PropTypes.func.isRequired,
   images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
+
+export default ImageLightbox;

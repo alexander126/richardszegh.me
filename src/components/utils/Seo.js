@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {Helmet} from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
 
-export default function SEO({title, description, lang, meta}) {
+function Seo({title, description, lang, meta}) {
   const {site} = useStaticQuery(graphql`
     query {
       site {
@@ -63,15 +63,17 @@ export default function SEO({title, description, lang, meta}) {
   );
 }
 
-SEO.defaultProps = {
-  description: '',
-  lang: 'en',
-  meta: [],
-};
-
-SEO.propTypes = {
+Seo.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
 };
+
+Seo.defaultProps = {
+  description: '',
+  lang: 'en',
+  meta: [],
+};
+
+export default Seo;
