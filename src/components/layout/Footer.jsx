@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import {PRIMARY_COLOR} from '../../style.config'
+import {PRIMARY_COLOR} from '../../style.config';
 
 const FooterContainer = styled.footer`
   display: flex;
@@ -13,7 +13,7 @@ const FooterContainer = styled.footer`
   padding-bottom: 24px;
   border-top: 1px solid #fff;
   text-align: center;
-`
+`;
 
 export default function Footer() {
   return (
@@ -26,5 +26,5 @@ export default function Footer() {
         {'All rights reserved.'}
       </small>
     </FooterContainer>
-  )
+  );
 }

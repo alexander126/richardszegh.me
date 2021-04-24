@@ -1,7 +1,7 @@
-import React from 'react'
-import {DiReact, DiWordpress, DiNodejsSmall} from 'react-icons/di'
+import React from 'react';
+import {DiReact, DiWordpress, DiNodejsSmall} from 'react-icons/di';
 
-export default [
+const projects = [
   {
     preview: 'fessh_preview.png',
     title: 'FESSH Admin & Backend',
@@ -28,4 +28,6 @@ export default [
     slideshow: true,
     slideshowFolder: 'foodsdrive_admin',
   },
-]
+];
+
+export default projects;

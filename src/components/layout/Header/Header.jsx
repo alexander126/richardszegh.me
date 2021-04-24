@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import {useStaticQuery, graphql} from 'gatsby'
-import Img from 'gatsby-image'
-import {AnchorLink} from 'gatsby-plugin-anchor-links'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import {useStaticQuery, graphql} from 'gatsby';
+import Img from 'gatsby-image';
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
 
-import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config'
+import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config';
 
-import Container from '../Container'
+import Container from '../Container';
 
-import DesktopNavigation from './DesktopNavigation'
+import DesktopNavigation from './DesktopNavigation';
 
 const HeaderContainer = styled.div`
   overflow: hidden;
@@ -25,20 +25,20 @@ const HeaderContainer = styled.div`
   transition: 0.3s ease-in-out;
   display: flex;
   align-items: center;
-`
+`;
 
 const HeaderContent = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-`
+`;
 
 const LogoLink = styled(AnchorLink)`
   margin: 0;
   padding: 0;
   height: 50px;
   width: 50px;
-`
+`;
 
 export default function Header({scrolled}) {
   const data = useStaticQuery(graphql`
@@ -59,7 +59,7 @@ export default function Header({scrolled}) {
         }
       }
     }
-  `)
+  `);
 
   return (
     <HeaderContainer scrolled={scrolled}>
@@ -79,9 +79,9 @@ export default function Header({scrolled}) {
         </HeaderContent>
       </Container>
     </HeaderContainer>
-  )
+  );
 }
 
 Header.propTypes = {
   scrolled: PropTypes.bool,
-}
+};

@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components'
-import {useStaticQuery, graphql} from 'gatsby'
-import Img from 'gatsby-image'
+import React from 'react';
+import styled from 'styled-components';
+import {useStaticQuery, graphql} from 'gatsby';
+import Img from 'gatsby-image';
 
-import {Grid} from '@material-ui/core'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import GitHubIcon from '@material-ui/icons/GitHub'
+import {Grid} from '@material-ui/core';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const ContactInfoContainer = styled.div`
   padding: 24px;
@@ -14,36 +14,36 @@ const ContactInfoContainer = styled.div`
   @media (min-width: 600px) {
     text-align: left;
   }
-`
+`;
 
 const ContactInfoItem = styled.div`
   &:not(:first-child) {
     margin-top: 24px;
   }
-`
+`;
 
 const ContactInfoItemTitle = styled.h4`
   font-size: 1.5rem;
   margin-bottom: 6px;
-`
+`;
 
 const ContactInfoItemDescription = styled.p`
   margin-bottom: 0;
-`
+`;
 
 const BlockTitle = styled.h4`
   font-size: 1.5rem;
   margin-bottom: 18px;
-`
+`;
 
 const SocialMediaIcons = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const AboutMe = styled.div`
   font-size: 0.875rem;
-`
+`;
 
 const Paragraph = styled.p`
   margin-bottom: 0;
@@ -51,12 +51,12 @@ const Paragraph = styled.p`
   &:not(:first-child) {
     margin-top: 12px;
   }
-`
+`;
 
 const TextLink = styled.a`
   text-decoration: none;
   color: inherit;
-`
+`;
 
 const IconLink = styled.a`
   text-decoration: none;
@@ -66,12 +66,12 @@ const IconLink = styled.a`
   &:not(:first-child) {
     margin-left: 24px;
   }
-`
+`;
 
 const AvatarContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const Avatar = styled(Img)`
   border-radius: 50%;
@@ -79,7 +79,7 @@ const Avatar = styled(Img)`
   margin: 0;
   height: 125px;
   width: 125px;
-`
+`;
 
 export default function ContactInfo() {
   const data = useStaticQuery(graphql`
@@ -92,7 +92,7 @@ export default function ContactInfo() {
         }
       }
     }
-  `)
+  `);
 
   return (
     <ContactInfoContainer>
@@ -174,5 +174,5 @@ export default function ContactInfo() {
         </Grid>
       </Grid>
     </ContactInfoContainer>
-  )
+  );
 }

@@ -1,34 +1,34 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
-import {useStaticQuery, graphql} from 'gatsby'
-import Img from 'gatsby-image'
-import {IconContext} from 'react-icons'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import {useStaticQuery, graphql} from 'gatsby';
+import Img from 'gatsby-image';
+import {IconContext} from 'react-icons';
 
-import {PRIMARY_COLOR} from '../../../style.config'
+import {PRIMARY_COLOR} from '../../../style.config';
 
-import {Grid} from '@material-ui/core'
-import RightIcon from '@material-ui/icons/ChevronRight'
+import {Grid} from '@material-ui/core';
+import RightIcon from '@material-ui/icons/ChevronRight';
 
-import Button from '../../UI/Button'
-import LinkButton from '../../UI/LinkButton'
-import ImageLightbox from '../../UI/ImageLightbox'
+import Button from '../../UI/Button';
+import LinkButton from '../../UI/LinkButton';
+import ImageLightbox from '../../UI/ImageLightbox';
 
 const ProjectContainer = styled.div`
   &:not(:first-child) {
     margin-top: 72px;
   }
-`
+`;
 
 const ProjectPreviewContainer = styled.div`
   display: flex;
   justify-content: center;
-`
+`;
 
 const ProjectPreview = styled.div`
   border: 2px solid ${PRIMARY_COLOR};
   position: relative;
-`
+`;
 
 const ProjectPreviewOverlay = styled.div`
   position: absolute;
@@ -44,11 +44,11 @@ const ProjectPreviewOverlay = styled.div`
   &:hover {
     opacity: 0.25;
   }
-`
+`;
 
 const ProjectInfo = styled.div`
   overflow: hidden;
-`
+`;
 
 const ProjectInfoHeading = styled.div`
   display: flex;
@@ -59,11 +59,11 @@ const ProjectInfoHeading = styled.div`
   @media (min-width: 960px) {
     justify-content: flex-start;
   }
-`
+`;
 
 const ProjectInfoTitle = styled.h2`
   margin-bottom: 0;
-`
+`;
 
 const ProjectInfoIcons = styled.div`
   display: flex;
@@ -71,7 +71,7 @@ const ProjectInfoIcons = styled.div`
   margin-left: 1rem;
   opacity: 0.5;
   color: grey;
-`
+`;
 
 const ProjectInfoIcon = styled.div`
   display: flex;
@@ -80,29 +80,29 @@ const ProjectInfoIcon = styled.div`
   &:not(:first-child) {
     margin-left: 0.5rem;
   }
-`
+`;
 
-const ProjectInfoDescription = styled.p``
+const ProjectInfoDescription = styled.p``;
 
-const ProjectInfoDescriptionList = styled.ul``
+const ProjectInfoDescriptionList = styled.ul``;
 
-const ProjectInfoDescriptionListItem = styled.li``
+const ProjectInfoDescriptionListItem = styled.li``;
 
 const ProjectInfoViewMore = styled.div`
   display: flex;
   justify-content: flex-end;
-`
+`;
 
 const ButtonContent = styled.span`
   display: flex;
   align-items: center;
   line-height: 1rem;
-`
+`;
 
 export default function ProjectListingItem({item}) {
-  const [isImageLightboxOpen, setIsImageLightboxOpen] = React.useState(false)
-  const handleImageLightboxOpen = () => setIsImageLightboxOpen(true)
-  const handleImageLightboxClose = () => setIsImageLightboxOpen(false)
+  const [isImageLightboxOpen, setIsImageLightboxOpen] = React.useState(false);
+  const handleImageLightboxOpen = () => setIsImageLightboxOpen(true);
+  const handleImageLightboxClose = () => setIsImageLightboxOpen(false);
 
   const data = useStaticQuery(graphql`
     query {
@@ -139,7 +139,7 @@ export default function ProjectListingItem({item}) {
         }
       }
     }
-  `)
+  `);
 
   const previewNode = React.useMemo(() => {
     if (data && data.allFile && Array.isArray(data.allFile.nodes)) {
@@ -149,15 +149,15 @@ export default function ProjectListingItem({item}) {
           node.childImageSharp.fixed &&
           node.childImageSharp.fixed.originalName === item.preview
         ) {
-          return true
+          return true;
         } else {
-          return false
+          return false;
         }
-      })
+      });
     } else {
-      return null
+      return null;
     }
-  }, [data, item])
+  }, [data, item]);
 
   const previewImg = React.useMemo(() => {
     if (
@@ -165,15 +165,15 @@ export default function ProjectListingItem({item}) {
       previewNode.childImageSharp &&
       previewNode.childImageSharp.fixed
     ) {
-      return previewNode.childImageSharp.fixed
+      return previewNode.childImageSharp.fixed;
     } else {
-      return null
+      return null;
     }
-  }, [previewNode])
+  }, [previewNode]);
 
   const slideshowImages = React.useMemo(() => {
-    const {slideshowFolder} = item
-    if (!slideshowFolder) return
+    const {slideshowFolder} = item;
+    if (!slideshowFolder) return;
 
     if (
       data &&
@@ -186,15 +186,15 @@ export default function ProjectListingItem({item}) {
           node.childImageSharp.original &&
           node.childImageSharp.original.src
         ) {
-          return node.childImageSharp.original.src
+          return node.childImageSharp.original.src;
         } else {
-          return null
+          return null;
         }
-      })
+      });
     } else {
-      return []
+      return [];
     }
-  }, [data, item])
+  }, [data, item]);
 
   return (
     <ProjectContainer>
@@ -209,9 +209,9 @@ export default function ProjectListingItem({item}) {
                   <ProjectPreviewOverlay
                     onClick={() => {
                       if (item.link) {
-                        window.open(item.link, '_blank', 'noopener')
+                        window.open(item.link, '_blank', 'noopener');
                       } else {
-                        handleImageLightboxOpen()
+                        handleImageLightboxOpen();
                       }
                     }}
                   />
@@ -305,9 +305,9 @@ export default function ProjectListingItem({item}) {
         />
       )}
     </ProjectContainer>
-  )
+  );
 }
 
 ProjectListingItem.propTypes = {
   item: PropTypes.object.isRequired,
-}
+};

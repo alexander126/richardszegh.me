@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
-import {AnchorLink} from 'gatsby-plugin-anchor-links'
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
 
 const NavBar = styled.nav`
   display: none;
@@ -9,14 +9,14 @@ const NavBar = styled.nav`
   @media (min-width: 768px) {
     display: block;
   }
-`
+`;
 
 const NavLink = styled(AnchorLink)`
   font-size: 1.25rem;
   color: inherit;
   text-decoration: none;
   margin-left: 25px;
-`
+`;
 
 export default function DesktopNavigation() {
   return (
@@ -29,5 +29,5 @@ export default function DesktopNavigation() {
 
       <NavLink to="/#contact">{'Contact me'}</NavLink>
     </NavBar>
-  )
+  );
 }

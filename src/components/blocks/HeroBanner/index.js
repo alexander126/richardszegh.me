@@ -1,3 +1,3 @@
-import HeroBanner from './HeroBanner'
+import HeroBanner from './HeroBanner';
 
-export default HeroBanner
+export default HeroBanner;

@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, {css} from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, {css} from 'styled-components';
 
 import {
   PRIMARY_COLOR,
@@ -8,9 +8,9 @@ import {
   getButtonFontSize,
   getButtonHorizontalPadding,
   getButtonVerticalPadding,
-} from '../../style.config'
+} from '../../style.config';
 
-import {AnchorLink} from 'gatsby-plugin-anchor-links'
+import {AnchorLink} from 'gatsby-plugin-anchor-links';
 
 const buttonBaseCss = css`
   display: inline-block;
@@ -33,7 +33,7 @@ const buttonBaseCss = css`
   border-radius: 0;
   border-color: transparent;
   transition: 0.4s;
-`
+`;
 
 const primaryButtonCss = css`
   background-color: ${SECONDARY_COLOR};
@@ -44,7 +44,7 @@ const primaryButtonCss = css`
     background-color: ${PRIMARY_COLOR};
     color: ${SECONDARY_COLOR};
   }
-`
+`;
 const secondaryButtonCss = css`
   background-color: transparent;
   border-color: ${PRIMARY_COLOR};
@@ -54,48 +54,48 @@ const secondaryButtonCss = css`
     background-color: ${PRIMARY_COLOR};
     color: ${SECONDARY_COLOR};
   }
-`
+`;
 
 const ButtonBase = styled.button`
   ${buttonBaseCss}
-`
+`;
 
 const PrimaryButton = styled(ButtonBase)`
   ${primaryButtonCss}
-`
+`;
 
 const SecondaryButton = styled(ButtonBase)`
   ${secondaryButtonCss}
-`
+`;
 
 const LinkButtonBase = styled(AnchorLink)`
   ${buttonBaseCss}
-`
+`;
 
 const LinkPrimaryButton = styled(LinkButtonBase)`
   ${primaryButtonCss}
-`
+`;
 
 const LinkSecondaryButton = styled(LinkButtonBase)`
   ${secondaryButtonCss}
-`
+`;
 
 export default function Button({children, variant, link, ...rest}) {
   if (link) {
     if (variant === 'primary') {
-      return <LinkPrimaryButton {...rest}>{children}</LinkPrimaryButton>
+      return <LinkPrimaryButton {...rest}>{children}</LinkPrimaryButton>;
     } else if (variant === 'secondary') {
-      return <LinkSecondaryButton {...rest}>{children}</LinkSecondaryButton>
+      return <LinkSecondaryButton {...rest}>{children}</LinkSecondaryButton>;
     } else {
-      return <LinkButtonBase {...rest}>{children}</LinkButtonBase>
+      return <LinkButtonBase {...rest}>{children}</LinkButtonBase>;
     }
   } else {
     if (variant === 'primary') {
-      return <PrimaryButton {...rest}>{children}</PrimaryButton>
+      return <PrimaryButton {...rest}>{children}</PrimaryButton>;
     } else if (variant === 'secondary') {
-      return <SecondaryButton {...rest}>{children}</SecondaryButton>
+      return <SecondaryButton {...rest}>{children}</SecondaryButton>;
     } else {
-      return <ButtonBase {...rest}>{children}</ButtonBase>
+      return <ButtonBase {...rest}>{children}</ButtonBase>;
     }
   }
 }
@@ -103,11 +103,11 @@ export default function Button({children, variant, link, ...rest}) {
 Button.defaultProps = {
   link: false,
   size: 'default',
-}
+};
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(['primary', 'secondary']),
   link: PropTypes.bool,
   size: PropTypes.oneOf(['large', 'default', 'small']),
-}
+};

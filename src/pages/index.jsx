@@ -1,21 +1,21 @@
-import React from 'react'
+import React from 'react';
 
-import Layout from '../components/layout'
-import SEO from '../components/utils/SEO'
+import Layout from '../components/layout';
+import Seo from '../components/utils/Seo';
 
-import HeroBanner from '../components/blocks/HeroBanner'
-import ServiceListing from '../components/blocks/ServiceListing'
-import ProjectListing from '../components/blocks/ProjectListing'
-import Contact from '../components/blocks/Contact'
+import HeroBanner from '../components/blocks/HeroBanner';
+import ServiceListing from '../components/blocks/ServiceListing';
+import ProjectListing from '../components/blocks/ProjectListing';
+import Contact from '../components/blocks/Contact';
 
-import services from '../content/services'
-import principles from '../content/principles'
-import projects from '../content/projects'
+import services from '../content/services';
+import principles from '../content/principles';
+import projects from '../content/projects';
 
 export default function Home() {
   return (
     <Layout>
-      <SEO title="Home" />
+      <Seo title="Home" />
 
       <HeroBanner />
 
@@ -56,5 +56,5 @@ export default function Home() {
         padding="large"
       />
     </Layout>
-  )
+  );
 }

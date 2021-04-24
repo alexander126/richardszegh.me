@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 export const StyledContainer = styled.div`
   padding-right: 15px;
@@ -16,8 +16,8 @@ export const StyledContainer = styled.div`
   @media (min-width: 1200px) {
     width: 1170px;
   }
-`
+`;
 
 export default function Container({children}) {
-  return <StyledContainer>{children}</StyledContainer>
+  return <StyledContainer>{children}</StyledContainer>;
 }

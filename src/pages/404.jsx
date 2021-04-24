@@ -1,17 +1,17 @@
-import React from 'react'
-import {navigate} from 'gatsby'
+import React from 'react';
+import {navigate} from 'gatsby';
 
-import Layout from '../components/layout'
-import SEO from '../components/utils/SEO'
+import Layout from '../components/layout';
+import Seo from '../components/utils/Seo';
 
 export default function NotFound() {
   React.useEffect(() => {
-    navigate('/')
-  }, [])
+    navigate('/');
+  }, []);
 
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <Seo title="404: Not found" />
     </Layout>
-  )
+  );
 }

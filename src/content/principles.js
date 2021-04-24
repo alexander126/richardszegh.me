@@ -1,7 +1,7 @@
-import React from 'react'
-import {MdFlare, MdExtension, MdCheckCircle} from 'react-icons/md'
+import React from 'react';
+import {MdFlare, MdExtension, MdCheckCircle} from 'react-icons/md';
 
-export default [
+const principles = [
   {
     icon: <MdFlare />,
     title: 'Quality',
@@ -19,4 +19,6 @@ export default [
     title: 'Result orientation',
     description: `Both quality and stability are useless if the product does not meet the vision's requirements. I make sure my clients get what they wanted.`,
   },
-]
+];
+
+export default principles;

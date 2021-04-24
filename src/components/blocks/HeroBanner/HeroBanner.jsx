@@ -1,25 +1,25 @@
-import React from 'react'
-import {useStaticQuery, graphql} from 'gatsby'
-import styled from 'styled-components'
-import BackgroundImage from 'gatsby-background-image'
+import React from 'react';
+import {useStaticQuery, graphql} from 'gatsby';
+import styled from 'styled-components';
+import BackgroundImage from 'gatsby-background-image';
 
-import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config'
+import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config';
 
-import Container from '../../layout/Container'
+import Container from '../../layout/Container';
 
-import Button from '../../UI/Button'
+import Button from '../../UI/Button';
 
 const HeroBannerBackground = styled(BackgroundImage)`
   padding-top: ${HEADER_HEIGHT}px;
   height: 100vh;
   color: #fff;
-`
+`;
 
 const HeroBannerContentWrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-`
+`;
 
 const HeroBannerContent = styled.div`
   display: flex;
@@ -29,7 +29,7 @@ const HeroBannerContent = styled.div`
   @media (min-width: 768px) {
     align-items: flex-end;
   }
-`
+`;
 
 const HeroBannerContentText = styled.div`
   max-width: 450px;
@@ -38,7 +38,7 @@ const HeroBannerContentText = styled.div`
   @media (min-width: 768px) {
     text-align: right;
   }
-`
+`;
 
 const Welcome = styled.h1`
   line-height: 1.25;
@@ -48,11 +48,11 @@ const Welcome = styled.h1`
   @media (min-width: 768px) {
     font-size: 2rem;
   }
-`
+`;
 
 const MissionContainer = styled.div`
   margin-bottom: 42px;
-`
+`;
 
 const MissionQuestion = styled.h4`
   margin-bottom: 0.75rem;
@@ -63,7 +63,7 @@ const MissionQuestion = styled.h4`
   padding-bottom: 0.35rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-`
+`;
 
 const Mission = styled.h1`
   line-height: 1.25;
@@ -72,11 +72,11 @@ const Mission = styled.h1`
   @media (min-width: 768px) {
     font-size: 3rem;
   }
-`
+`;
 
 const ButtonContainer = styled.div`
   text-align: center;
-`
+`;
 
 export default function HeroBanner() {
   const data = useStaticQuery(graphql`
@@ -89,7 +89,7 @@ export default function HeroBanner() {
         }
       }
     }
-  `)
+  `);
 
   return (
     <HeroBannerBackground
@@ -125,5 +125,5 @@ export default function HeroBanner() {
         </Container>
       </HeroBannerContentWrapper>
     </HeroBannerBackground>
-  )
+  );
 }

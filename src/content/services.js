@@ -1,7 +1,7 @@
-import React from 'react'
-import {MdWeb, MdSettings, MdAllInclusive} from 'react-icons/md'
+import React from 'react';
+import {MdWeb, MdSettings, MdAllInclusive} from 'react-icons/md';
 
-export default [
+const services = [
   {
     icon: <MdWeb />,
     title: 'Website development',
@@ -30,4 +30,6 @@ export default [
       '& more',
     ],
   },
-]
+];
+
+export default services;

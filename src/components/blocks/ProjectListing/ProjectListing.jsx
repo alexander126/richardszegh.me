@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config';
 
-import Container from '../../layout/Container'
-import Button from '../../UI/Button'
+import Container from '../../layout/Container';
+import Button from '../../UI/Button';
 
-import ProjectListingItem from './ProjectListingItem'
+import ProjectListingItem from './ProjectListingItem';
 
 const ProjectListingSection = styled.section`
   background-color: ${props =>
@@ -16,21 +16,21 @@ const ProjectListingSection = styled.section`
   padding-top: ${props => getSectionPadding(props.padding)};
   padding-bottom: ${props => getSectionPadding(props.padding)};
   overflow: hidden;
-`
+`;
 
 const ProjectListingTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 4rem;
   text-align: center;
-`
+`;
 
-const ProjectsContainer = styled.div``
+const ProjectsContainer = styled.div``;
 
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 72px;
-`
+`;
 
 export default function ProjectListing({
   id,
@@ -67,13 +67,13 @@ export default function ProjectListing({
         )}
       </Container>
     </ProjectListingSection>
-  )
+  );
 }
 
 ProjectListing.defaultProps = {
   background: 'white',
   padding: 'default',
-}
+};
 
 ProjectListing.propTypes = {
   title: PropTypes.string,
@@ -82,4 +82,4 @@ ProjectListing.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   continueLabel: PropTypes.string,
   continueLink: PropTypes.string,
-}
+};

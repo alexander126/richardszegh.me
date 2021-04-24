@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config';
 
-import {Grid} from '@material-ui/core'
+import {Grid} from '@material-ui/core';
 
-import Container from '../../layout/Container'
+import Container from '../../layout/Container';
 
-import ContactForm from './ContactForm'
-import ContactInfo from './ContactInfo'
+import ContactForm from './ContactForm';
+import ContactInfo from './ContactInfo';
 
 const ContactSection = styled.section`
   background-color: ${props =>
@@ -18,13 +18,13 @@ const ContactSection = styled.section`
   padding-top: ${props => getSectionPadding(props.padding)};
   padding-bottom: ${props => getSectionPadding(props.padding)};
   overflow: hidden;
-`
+`;
 
 const ContactTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 4rem;
   text-align: center;
-`
+`;
 
 export default function Contact({id, title, background, padding}) {
   return (
@@ -43,16 +43,16 @@ export default function Contact({id, title, background, padding}) {
         </Grid>
       </Container>
     </ContactSection>
-  )
+  );
 }
 
 Contact.defaultProps = {
   background: 'white',
   padding: 'default',
-}
+};
 
 Contact.propTypes = {
   title: PropTypes.string,
   background: PropTypes.oneOf(['primary', 'white']),
   padding: PropTypes.oneOf(['large', 'default', 'small']),
-}
+};

@@ -1,6 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, {css} from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, {css} from 'styled-components';
 
 import {
   PRIMARY_COLOR,
@@ -8,7 +8,7 @@ import {
   getButtonFontSize,
   getButtonHorizontalPadding,
   getButtonVerticalPadding,
-} from '../../style.config'
+} from '../../style.config';
 
 const buttonBaseCss = css`
   display: inline-block;
@@ -31,7 +31,7 @@ const buttonBaseCss = css`
   border-radius: 0;
   border-color: transparent;
   transition: 0.4s;
-`
+`;
 
 const primaryButtonCss = css`
   background-color: ${SECONDARY_COLOR};
@@ -42,7 +42,7 @@ const primaryButtonCss = css`
     background-color: ${PRIMARY_COLOR};
     color: ${SECONDARY_COLOR};
   }
-`
+`;
 const secondaryButtonCss = css`
   background-color: transparent;
   border-color: ${PRIMARY_COLOR};
@@ -52,36 +52,36 @@ const secondaryButtonCss = css`
     background-color: ${PRIMARY_COLOR};
     color: ${SECONDARY_COLOR};
   }
-`
+`;
 
 const ButtonBase = styled.a`
   ${buttonBaseCss}
-`
+`;
 
 const PrimaryButton = styled(ButtonBase)`
   ${primaryButtonCss}
-`
+`;
 
 const SecondaryButton = styled(ButtonBase)`
   ${secondaryButtonCss}
-`
+`;
 
 export default function Button({children, variant, link, ...rest}) {
   if (variant === 'primary') {
-    return <PrimaryButton {...rest}>{children}</PrimaryButton>
+    return <PrimaryButton {...rest}>{children}</PrimaryButton>;
   } else if (variant === 'secondary') {
-    return <SecondaryButton {...rest}>{children}</SecondaryButton>
+    return <SecondaryButton {...rest}>{children}</SecondaryButton>;
   } else {
-    return <ButtonBase {...rest}>{children}</ButtonBase>
+    return <ButtonBase {...rest}>{children}</ButtonBase>;
   }
 }
 
 Button.defaultProps = {
   size: 'default',
-}
+};
 
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   variant: PropTypes.oneOf(['primary', 'secondary']),
   size: PropTypes.oneOf(['large', 'default', 'small']),
-}
+};

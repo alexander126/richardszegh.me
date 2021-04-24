@@ -1,21 +1,21 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Header from './Header/Header'
-import Footer from './Footer'
+import Header from './Header/Header';
+import Footer from './Footer';
 
 export default function Layout({children}) {
-  const [scrolled, setScrolled] = React.useState(false)
+  const [scrolled, setScrolled] = React.useState(false);
 
-  const updateScrolled = () => setScrolled(window.scrollY > 0)
+  const updateScrolled = () => setScrolled(window.scrollY > 0);
 
   React.useEffect(() => {
-    window.addEventListener('scroll', updateScrolled)
+    window.addEventListener('scroll', updateScrolled);
 
     return () => {
-      window.removeEventListener('scroll', updateScrolled)
-    }
-  }, [])
+      window.removeEventListener('scroll', updateScrolled);
+    };
+  }, []);
 
   return (
     <>
@@ -25,9 +25,9 @@ export default function Layout({children}) {
 
       <Footer />
     </>
-  )
+  );
 }
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};

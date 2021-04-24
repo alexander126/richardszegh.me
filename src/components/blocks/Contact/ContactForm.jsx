@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled, {css} from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled, {css} from 'styled-components';
 
-import {PRIMARY_COLOR} from '../../../style.config'
+import {PRIMARY_COLOR} from '../../../style.config';
 
-import Button from '../../UI/Button'
+import Button from '../../UI/Button';
 
 const inputCss = css`
   width: 100%;
@@ -15,61 +15,61 @@ const inputCss = css`
   border-radius: 0;
   outline: none;
   color: ${PRIMARY_COLOR};
-`
+`;
 
 const ContactFormContainer = styled.div`
   padding: 24px;
-`
+`;
 
 const InputBlock = styled.div`
   &:not(:first-child) {
     margin-top: 24px;
   }
-`
+`;
 
 const InputLabel = styled.label`
   font-size: 1.5rem;
   font-weight: bold;
-`
+`;
 
 const InputField = styled.input`
   ${inputCss}
-`
+`;
 
 const InputArea = styled.textarea`
   resize: none;
   ${inputCss}
-`
+`;
 
 const Submit = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 24px;
-`
+`;
 
 const encodeFormData = object => {
   return Object.keys(object)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(object[key]))
-    .join('&')
-}
+    .join('&');
+};
 
 export default function ContactForm({background}) {
-  const [name, setName] = React.useState('')
-  const [email, setEmail] = React.useState('')
-  const [message, setMessage] = React.useState('')
+  const [name, setName] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [message, setMessage] = React.useState('');
 
-  const handleNameChange = e => setName(e.target.value)
-  const handleEmailChange = e => setEmail(e.target.value)
-  const handleMessageChange = e => setMessage(e.target.value)
+  const handleNameChange = e => setName(e.target.value);
+  const handleEmailChange = e => setEmail(e.target.value);
+  const handleMessageChange = e => setMessage(e.target.value);
 
   const resetForm = () => {
-    setName('')
-    setEmail('')
-    setMessage('')
-  }
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
 
     fetch('/', {
       method: 'POST',
@@ -84,16 +84,16 @@ export default function ContactForm({background}) {
       .then(() => {
         alert(
           'Your message has been successfully sent! I will get back to you as soon as I can!'
-        )
+        );
       })
       .catch(error => {
         alert(
           'Oops, it looks like something is broken, apologies, please contact me directly via email instead (richard.szegh@gmail.com)!'
-        )
-      })
+        );
+      });
 
-    resetForm()
-  }
+    resetForm();
+  };
 
   return (
     <ContactFormContainer>
@@ -160,13 +160,13 @@ export default function ContactForm({background}) {
         </Submit>
       </form>
     </ContactFormContainer>
-  )
+  );
 }
 
 ContactForm.defaultProps = {
   background: 'white',
-}
+};
 
 ContactForm.propTypes = {
   background: PropTypes.oneOf(['primary', 'white']),
-}
+};

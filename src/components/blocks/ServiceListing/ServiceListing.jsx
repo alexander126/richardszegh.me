@@ -1,15 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config';
 
-import {Grid} from '@material-ui/core'
+import {Grid} from '@material-ui/core';
 
-import Container from '../../layout/Container'
-import Button from '../../UI/Button'
+import Container from '../../layout/Container';
+import Button from '../../UI/Button';
 
-import ServiceListingItem from './ServiceListingItem'
+import ServiceListingItem from './ServiceListingItem';
 
 const ServiceListingSection = styled.section`
   background-color: ${props =>
@@ -18,19 +18,19 @@ const ServiceListingSection = styled.section`
   padding-top: ${props => getSectionPadding(props.padding)};
   padding-bottom: ${props => getSectionPadding(props.padding)};
   overflow: hidden;
-`
+`;
 
 const ServiceListingTitle = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 4rem;
   text-align: center;
-`
+`;
 
 const ContinueContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 48px;
-`
+`;
 
 export default function ServiceListing({
   id,
@@ -71,13 +71,13 @@ export default function ServiceListing({
         )}
       </Container>
     </ServiceListingSection>
-  )
+  );
 }
 
 ServiceListing.defaultProps = {
   background: 'white',
   padding: 'default',
-}
+};
 
 ServiceListing.propTypes = {
   title: PropTypes.string,
@@ -86,4 +86,4 @@ ServiceListing.propTypes = {
   items: PropTypes.arrayOf(PropTypes.object).isRequired,
   continueLabel: PropTypes.string,
   continueLink: PropTypes.string,
-}
+};
