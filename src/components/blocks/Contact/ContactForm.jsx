@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled, {css} from 'styled-components'
 
-import { PRIMARY_COLOR } from '../../../style.config'
+import {PRIMARY_COLOR} from '../../../style.config'
 
 import Button from '../../UI/Button'
 
@@ -53,7 +53,7 @@ const encodeFormData = object => {
     .join('&')
 }
 
-export default function ContactForm({ background }) {
+export default function ContactForm({background}) {
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
   const [message, setMessage] = React.useState('')
@@ -73,7 +73,7 @@ export default function ContactForm({ background }) {
 
     fetch('/', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
       body: encodeFormData({
         name,
         email,

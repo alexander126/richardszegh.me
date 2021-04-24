@@ -1,9 +1,9 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
 
-import { HEADER_HEIGHT, PRIMARY_COLOR } from '../../../style.config'
+import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config'
 
 import Container from '../../layout/Container'
 
@@ -81,7 +81,7 @@ const ButtonContainer = styled.div`
 export default function HeroBanner() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "abstract_space.png" }) {
+      file(relativePath: {eq: "abstract_space.png"}) {
         childImageSharp {
           fluid(maxWidth: 1920, quality: 100) {
             ...GatsbyImageSharpFluid

@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import {
   PRIMARY_COLOR,
@@ -10,7 +10,7 @@ import {
   getButtonVerticalPadding,
 } from '../../style.config'
 
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 
 const buttonBaseCss = css`
   display: inline-block;
@@ -80,7 +80,7 @@ const LinkSecondaryButton = styled(LinkButtonBase)`
   ${secondaryButtonCss}
 `
 
-export default function Button({ children, variant, link, ...rest }) {
+export default function Button({children, variant, link, ...rest}) {
   if (link) {
     if (variant === 'primary') {
       return <LinkPrimaryButton {...rest}>{children}</LinkPrimaryButton>

@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import { IconContext } from 'react-icons'
+import {IconContext} from 'react-icons'
 
-import { PRIMARY_COLOR } from '../../../style.config'
+import {PRIMARY_COLOR} from '../../../style.config'
 
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 import RightIcon from '@material-ui/icons/ChevronRight'
 
 import Button from '../../UI/Button'
@@ -99,7 +99,7 @@ const ButtonContent = styled.span`
   line-height: 1rem;
 `
 
-export default function ProjectListingItem({ item }) {
+export default function ProjectListingItem({item}) {
   const [isImageLightboxOpen, setIsImageLightboxOpen] = React.useState(false)
   const handleImageLightboxOpen = () => setIsImageLightboxOpen(true)
   const handleImageLightboxClose = () => setIsImageLightboxOpen(false)
@@ -117,7 +117,7 @@ export default function ProjectListingItem({ item }) {
         }
       }
 
-      fessh: allFile(filter: { relativeDirectory: { eq: "fessh" } }) {
+      fessh: allFile(filter: {relativeDirectory: {eq: "fessh"}}) {
         nodes {
           childImageSharp {
             original {
@@ -128,7 +128,7 @@ export default function ProjectListingItem({ item }) {
       }
 
       foodsdrive_admin: allFile(
-        filter: { relativeDirectory: { eq: "foodsdrive_admin" } }
+        filter: {relativeDirectory: {eq: "foodsdrive_admin"}}
       ) {
         nodes {
           childImageSharp {
@@ -172,7 +172,7 @@ export default function ProjectListingItem({ item }) {
   }, [previewNode])
 
   const slideshowImages = React.useMemo(() => {
-    const { slideshowFolder } = item
+    const {slideshowFolder} = item
     if (!slideshowFolder) return
 
     if (

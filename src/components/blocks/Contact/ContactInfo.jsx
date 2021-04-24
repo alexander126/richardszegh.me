@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
 
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 
@@ -84,7 +84,7 @@ const Avatar = styled(Img)`
 export default function ContactInfo() {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "me.jpeg" }) {
+      file(relativePath: {eq: "me.jpeg"}) {
         childImageSharp {
           fixed(height: 125, width: 125) {
             ...GatsbyImageSharpFixed

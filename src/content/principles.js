@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdFlare, MdExtension, MdCheckCircle } from 'react-icons/md'
+import {MdFlare, MdExtension, MdCheckCircle} from 'react-icons/md'
 
 export default [
   {

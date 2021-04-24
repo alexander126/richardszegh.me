@@ -18,6 +18,6 @@ export const StyledContainer = styled.div`
   }
 `
 
-export default function Container({ children }) {
+export default function Container({children}) {
   return <StyledContainer>{children}</StyledContainer>
 }

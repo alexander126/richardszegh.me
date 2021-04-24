@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PRIMARY_COLOR, getSectionPadding } from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
 
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 
 import Container from '../../layout/Container'
 import Button from '../../UI/Button'

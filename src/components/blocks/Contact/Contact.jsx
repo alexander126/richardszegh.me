@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PRIMARY_COLOR, getSectionPadding } from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
 
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 
 import Container from '../../layout/Container'
 
@@ -26,7 +26,7 @@ const ContactTitle = styled.h2`
   text-align: center;
 `
 
-export default function Contact({ id, title, background, padding }) {
+export default function Contact({id, title, background, padding}) {
   return (
     <ContactSection id={id} background={background} padding={padding}>
       <Container>

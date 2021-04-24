@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 
 const NavBar = styled.nav`
   display: none;

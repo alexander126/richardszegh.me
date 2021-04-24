@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import {useStaticQuery, graphql} from 'gatsby'
 import Img from 'gatsby-image'
-import { AnchorLink } from 'gatsby-plugin-anchor-links'
+import {AnchorLink} from 'gatsby-plugin-anchor-links'
 
-import { HEADER_HEIGHT, PRIMARY_COLOR } from '../../../style.config'
+import {HEADER_HEIGHT, PRIMARY_COLOR} from '../../../style.config'
 
 import Container from '../Container'
 
@@ -40,10 +40,10 @@ const LogoLink = styled(AnchorLink)`
   width: 50px;
 `
 
-export default function Header({ scrolled }) {
+export default function Header({scrolled}) {
   const data = useStaticQuery(graphql`
     query {
-      primaryLogo: file(relativePath: { eq: "logo_primary.png" }) {
+      primaryLogo: file(relativePath: {eq: "logo_primary.png"}) {
         childImageSharp {
           fixed(height: 50, width: 50) {
             ...GatsbyImageSharpFixed
@@ -51,7 +51,7 @@ export default function Header({ scrolled }) {
         }
       }
 
-      secondaryLogo: file(relativePath: { eq: "logo_secondary.png" }) {
+      secondaryLogo: file(relativePath: {eq: "logo_secondary.png"}) {
         childImageSharp {
           fixed(height: 50, width: 50) {
             ...GatsbyImageSharpFixed

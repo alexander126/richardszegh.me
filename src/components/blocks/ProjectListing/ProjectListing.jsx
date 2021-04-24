@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import { PRIMARY_COLOR, getSectionPadding } from '../../../style.config'
+import {PRIMARY_COLOR, getSectionPadding} from '../../../style.config'
 
 import Container from '../../layout/Container'
 import Button from '../../UI/Button'

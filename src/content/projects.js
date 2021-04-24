@@ -1,5 +1,5 @@
 import React from 'react'
-import { DiReact, DiWordpress, DiNodejsSmall } from 'react-icons/di'
+import {DiReact, DiWordpress, DiNodejsSmall} from 'react-icons/di'
 
 export default [
   {

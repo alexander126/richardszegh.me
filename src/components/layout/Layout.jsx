@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Header from './Header/Header'
 import Footer from './Footer'
 
-export default function Layout({ children }) {
+export default function Layout({children}) {
   const [scrolled, setScrolled] = React.useState(false)
 
   const updateScrolled = () => setScrolled(window.scrollY > 0)

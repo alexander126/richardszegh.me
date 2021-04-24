@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { IconContext } from 'react-icons'
+import {IconContext} from 'react-icons'
 
-import { Grid } from '@material-ui/core'
+import {Grid} from '@material-ui/core'
 
 const Content = styled.div`
   text-align: center;
@@ -47,7 +47,7 @@ const DescriptionList = styled.ul`
 
 const DescriptionListItem = styled.li``
 
-export default function ServiceListingItem({ icon, title, description }) {
+export default function ServiceListingItem({icon, title, description}) {
   return (
     <Grid item xs={12} md={4}>
       <Content>

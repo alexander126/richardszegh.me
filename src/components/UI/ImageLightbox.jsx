@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Lightbox from 'react-image-lightbox'
 import 'react-image-lightbox/style.css'
 
-export default function ImageLightbox({ open, onClose, images }) {
+export default function ImageLightbox({open, onClose, images}) {
   const [photoIndex, setPhotoIndex] = React.useState(0)
 
   const handlePrev = () => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { PRIMARY_COLOR } from '../../style.config'
+import {PRIMARY_COLOR} from '../../style.config'
 
 const FooterContainer = styled.footer`
   display: flex;

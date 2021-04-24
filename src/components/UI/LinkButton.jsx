@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { css } from 'styled-components'
+import styled, {css} from 'styled-components'
 
 import {
   PRIMARY_COLOR,
@@ -66,7 +66,7 @@ const SecondaryButton = styled(ButtonBase)`
   ${secondaryButtonCss}
 `
 
-export default function Button({ children, variant, link, ...rest }) {
+export default function Button({children, variant, link, ...rest}) {
   if (variant === 'primary') {
     return <PrimaryButton {...rest}>{children}</PrimaryButton>
   } else if (variant === 'secondary') {

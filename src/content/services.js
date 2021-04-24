@@ -1,5 +1,5 @@
 import React from 'react'
-import { MdWeb, MdSettings, MdAllInclusive } from 'react-icons/md'
+import {MdWeb, MdSettings, MdAllInclusive} from 'react-icons/md'
 
 export default [
   {
