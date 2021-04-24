@@ -17,7 +17,7 @@
   },
   "scripts": {
     "develop": "gatsby develop",
-    "start": "npm run develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
